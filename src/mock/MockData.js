@@ -1,32 +1,33 @@
 
-const Data =
+const Data = 
 {
-    heading:"Name - Abilities Selector",
-    drop1:
-    [
-        {
-            "ability":
-            {
-                "name":"charmelon",
-            }
-        },
-        {
-            "ability":
-            {
-                "name":"bulbasaur",
-            }
-        },{
+    heading:"Name -Abilities Selector",
+   drop1:
+   [
+    {
         "ability":
         {
-            "name":"squirtle",
+            "name":"charmeleon",
         }
     },
     {
         "ability":
         {
-            "name":"weedle",
+            "name":"bulbasaur",
         }
+    },
+    {
+        "ability":
+        {
+            "name":"squirtle"
+        }
+    },
+    {
+    "ability":
+    {
+      "name":"weedle"
     }
-    ]
+}
+   ] 
 }
 export default Data;

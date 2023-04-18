@@ -1,28 +1,8 @@
-import ACTION_TYPES from "../actions/actionTypes";
+import { createStore, applyMiddleware } from 'redux';
+import RootReducer from '../reducers/rootReducer';
+import ReduxThunk from 'redux-thunk';
 
-const initialState = {
-  result: [],
-  error: null,
-};
-
-const valuesReducer = (state = initialState, { payload, type }) => {
-  switch (type) {
-    case ACTION_TYPES.FETCH_SUCCESS:
-      return {
-        ...state,
-        result: payload,
-        error: null,
-      };
-
-    case ACTION_TYPES.FETCH_FAIL:
-      return {
-        ...state,
-        error: payload,
-      };
-      
-    default:
-      return state;
-  }
-};
-
-export default valuesReducer;
+export const middlewares = [ReduxThunk];
+export const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore)
+export const store = createStoreWithMiddleware(RootReducer);
+export default store;
