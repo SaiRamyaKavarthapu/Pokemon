@@ -1,19 +1,21 @@
 import PokemonList from "../component/PokemonList";
 import {connect} from 'react-redux';
-import getValues from "../actions/action-get-values";
-
+import { getData,getValue } from "../actions/action-get-data";
 
 export const mapStateToProps = (state) =>{
 
     return {
-        result:state.event.result
+        count:state.event.count
     }
 
 }
 
 export const mapDispatchProps=(dispatch)=>({
 
-getValues : (name)=> dispatch(getValues(name))
+getData: value=>dispatch(getData(value)),
+getValue:value=>dispatch(getValue(value))
+
+
 
 })
 
